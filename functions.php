@@ -1,10 +1,10 @@
 <?php
 /**
- * skeleto functions and definitions
+ * Skeleto functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package skeleto
+ * @package Skeleto
  */
 
 if ( ! function_exists( 'skeleto_setup' ) ) :
@@ -19,7 +19,7 @@ if ( ! function_exists( 'skeleto_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on skeleto, use a find and replace
+		 * If you're building a theme based on Skeleto, use a find and replace
 		 * to change 'skeleto' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'skeleto', get_template_directory() . '/languages' );
@@ -122,9 +122,15 @@ add_action( 'widgets_init', 'skeleto_widgets_init' );
 function skeleto_scripts() {
 	wp_enqueue_style( 'skeleto-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'skeleto-underscores-style', get_template_directory_uri() . '/css/underscores.css', array() );
+
+	wp_enqueue_style( 'skeleto-theme-style', get_template_directory_uri() . '/css/skeleto.css', array() );
+
 	wp_enqueue_script( 'skeleto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'skeleto-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'skeleto-pushy', get_template_directory_uri() . '/js/pushy.js', array('jquery'), null, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -158,4 +164,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

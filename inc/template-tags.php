@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package skeleto
+ * @package Skeleto
  */
 
 if ( ! function_exists( 'skeleto_posted_on' ) ) :

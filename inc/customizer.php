@@ -1,8 +1,8 @@
 <?php
 /**
- * skeleto Theme Customizer
+ * Skeleto Theme Customizer
  *
- * @package skeleto
+ * @package Skeleto
  */
 
 /**
